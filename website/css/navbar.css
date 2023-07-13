@@ -1,0 +1,143 @@
+
+.navbar{
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.cf::before, .cf:after{
+    content: "";
+    display: table;
+}
+
+.cf::after{
+    clear: both;
+}
+
+.cf{
+    zoom:1;
+}
+
+.menu{
+    list-style: none;
+    /* margin: 50px auto; */
+    width: 800px;
+    width: fit-content;
+}
+
+.menu li{
+    background: #e7a25a;
+    float: left;
+    position: relative;
+    transform: skewX(25deg);
+    border-radius: 3px;
+}
+
+.menu a{
+    display: block;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: tahoma;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.menu li:hover{
+    background: #e74c3c;
+
+}
+
+.menu > li > a{
+    transform: skewX(-25deg);
+    padding: 1em 2em;
+
+}
+
+.submenu{
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    margin-left: -100px;
+    transform: skewX(-25deg);
+    transform-origin: left top;
+    /* border: 1px solid rebeccapurple; */
+}
+
+.submenu li{
+    background-color: #34495e;
+    position: relative;
+    overflow: hidden;
+    /* border: 1px solid red; */
+}
+
+.submenu > li > a{
+    padding: 1em 2em;
+}
+
+.submenu > li::after
+{
+    content: '';
+    position: absolute;
+    top: -125%;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 50px rgba(40, 37, 79, 0.9);
+
+}
+
+.submenu > li:nth-child(odd){
+    -webkit-transform: skewX(-25deg) translateX(0);
+
+}
+
+/* .submenu > li:nth-child(odd) > a{
+    -webkit-transform: skewX(-25deg);
+
+}
+
+.submenu > li:nth-child(odd)::after{
+    -webkit-transform: skewX(-25deg);
+    right: -50%;
+}
+
+.submenu > li:nth-child(even){
+    right: -50%;
+    -webkit-transform: skewX(-25deg) translateX(0);
+}
+
+.submenu > li:nth-child(even) > a{
+    -webkit-transform: skewX(-25deg);
+}
+
+.submenu > li:nth-child(even)::after{
+    left: -50%;
+    -webkit-transform: skewX(25deg);
+
+} */
+
+.submenu, .submenu li{
+    opacity: 0;
+    /* -webkit-transform: skewX(25deg); */
+    border-radius: 3px;
+
+}
+
+.submenu li{
+    transition: 0.2s ease -webkit-transform;
+}
+
+.menu > li:hover .submenu, .menu > li:hover .submenu li{
+    opacity: 1;
+    visibility: visible;
+} 
+
+.menu > li:hover .submenu li:nth-child(even){
+    -webkit-transform: skewX(25deg) translateX(15deg);
+
+}
+
+.menu > li:hover .submenu li:nth-child(odd){
+    -webkit-transform: skewX(-25deg) translateX(-15deg);
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card effect on scroll</title>
+    <link rel="stylesheet" href="css/card.css">
+</head>
+<body>
+
+    <section class="card-scroll">
+        <h1>Reveal Element On Scroll</h1>
+    </section>
+
+    <section class="card-scroll">
+        <div class="container reveal">
+            <h2>Your Title</h2>
+            <div class="cards">
+
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis eveniet eos cumque, nihil consectetur veniam placeat odio. Modi, facere consequuntur repudiandae asperiores saepe molestiae corporis odit rem pariatur! Perspiciatis, tenetur.</p>
+                </div>
+
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis eveniet eos cumque, nihil consectetur veniam placeat odio. Modi, facere consequuntur repudiandae asperiores saepe molestiae corporis odit rem pariatur! Perspiciatis, tenetur.</p>
+                </div>
+
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis eveniet eos cumque, nihil consectetur veniam placeat odio. Modi, facere consequuntur repudiandae asperiores saepe molestiae corporis odit rem pariatur! Perspiciatis, tenetur.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="card-scroll">
+        <div class="container reveal">
+            <h2>Your Title</h2>
+            <div class="cards">
+                
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis eveniet eos cumque, nihil consectetur veniam placeat odio. Modi, facere consequuntur repudiandae asperiores saepe molestiae corporis odit rem pariatur! Perspiciatis, tenetur.</p>
+                </div>
+
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis eveniet eos cumque, nihil consectetur veniam placeat odio. Modi, facere consequuntur repudiandae asperiores saepe molestiae corporis odit rem pariatur! Perspiciatis, tenetur.</p>
+                </div>
+
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis eveniet eos cumque, nihil consectetur veniam placeat odio. Modi, facere consequuntur repudiandae asperiores saepe molestiae corporis odit rem pariatur! Perspiciatis, tenetur.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="card-scroll">
+        <div class="container reveal">
+            <h2>Your Title</h2>
+            <div class="cards">
+                
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis eveniet eos cumque, nihil consectetur veniam placeat odio. Modi, facere consequuntur repudiandae asperiores saepe molestiae corporis odit rem pariatur! Perspiciatis, tenetur.</p>
+                </div>
+
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis eveniet eos cumque, nihil consectetur veniam placeat odio. Modi, facere consequuntur repudiandae asperiores saepe molestiae corporis odit rem pariatur! Perspiciatis, tenetur.</p>
+                </div>
+
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis eveniet eos cumque, nihil consectetur veniam placeat odio. Modi, facere consequuntur repudiandae asperiores saepe molestiae corporis odit rem pariatur! Perspiciatis, tenetur.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+
+    <script type="text/javascript">
+        window.addEventListener('scroll',reveal);
+
+        function reveal(){
+            var reveals = document.querySelectorAll('.reveal');
+
+            for(var i=0; i < reveals.length; i++){
+                var windowheight = window.innerHeight;
+                var revealtop = reveals[i].getBoundingClientRect().top;
+                var revealpoint = 150;
+
+                if(revealtop < windowheight - revealpoint){
+                    reveals[i].classList.add('active');
+                }
+                else{
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

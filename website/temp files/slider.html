@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/slider.css">
+    <title>carousal using javascript</title>
+</head>
+<body>
+
+    <div class="main">
+        <div class="content">
+            <div class="images"> 
+                <img src="images/img-1.jpg" alt="img1" class="fade">
+                <img src="images/img-2.jpg" alt="img2" class="fade">
+                <img src="images/img-3.jpg" alt="img3" class="fade">
+                <img src="images/img-4.jpg" alt="img4" class="fade">
+            </div>
+
+            <div onclick="side_slide(-1)" class="slide left">
+                <span class="fas fa-angle-left"> < </span>
+            </div>
+
+            <div onclick="side_slide(1)" class="slide right">
+                <span class="fas fa-angle-right"> > </span>
+            </div>
+
+            <div class="btm-sliders">
+                <span onclick="btm_slide(1)"></span>
+                <span onclick="btm_slide(2)"></span>
+                <span onclick="btm_slide(3)"></span>
+                <span onclick="btm_slide(4)"></span>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        var indexValue=1;
+        showImg(indexValue);
+        function btm_slide(e){
+            showImg(indexValue = e);
+        }
+        function side_slide(e){
+            showImg(indexValue += e);
+        }
+
+        function showImg(e){
+            var i;
+            const img = document.querySelectorAll('img');
+            const sliders = document.querySelectorAll('.btm-sliders span');
+            
+            if(e > img.length){indexValue = 1;}
+            if(e < 1){indexValue = img.length}
+
+            for(i=0; i<img.length; i++){
+                img[i].style.display = "none";
+            }
+
+            for(i=0; i<sliders.length; i++){
+                sliders[i].style.background = "pink";
+            }
+
+            img[indexValue-1].style.display = "block";
+            sliders[indexValue-1].style.background = "white";
+
+        }
+
+        //auto slide code start
+        // var slideindex = 0;
+        // showslides();
+
+        // function showslides(){
+        //     var i;
+        //     const images = document.querySelectorAll('img');
+        //     const slides = document.querySelectorAll('.btm-sliders span');
+            
+        //     for(i=0; i<slides.length; i++){
+        //         images[i].style.display = "none";
+        //         slides[i].style.background = "green";
+        //     }
+
+        //     slideindex++;
+
+        //     if(slideindex > slides.length){
+        //         slideindex = 1;
+        //     }
+
+        //     images[slideindex-1].style.display = "block";
+        //     slides[slideindex-1].style.background = "white";
+
+        //     setTimeout(showslides,5000); //change image in every 2 seconds
+
+        // }
+    </script>
+
+    
+</body>
+</html>

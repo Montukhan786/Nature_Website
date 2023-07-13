@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* background-color: red; */
+    background: url(../images/img.jpg);
+}
+
+form{
+    box-shadow: 1px 1px 10px white;
+    /* border:2px solid red; */
+    background-color: aqua;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+
+.error{
+    color: red;
+    margin-top: 4px;
+    font-size: 18px;
+}

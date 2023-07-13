@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic navbar</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            background-image: url(images/service-2.jpg);
+            background-size: cover;
+        }
+
+        .cf::before, .cf:after{
+            content: "";
+            display: table;
+        }
+
+        .cf::after{
+            clear: both;
+        }
+
+        .cf{
+            zoom:1;
+        }
+
+        .menu{
+            list-style: none;
+            margin: 50px auto;
+            width: 800px;
+            width: fit-content;
+            border: 1px solid green;
+        }
+
+        .menu li{
+            background: #e7a25a;
+            float: left;
+            position: relative;
+            transform: skewX(25deg);
+            border-radius: 3px;
+        }
+
+        .menu a{
+            display: block;
+            color: white;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-family: tahoma;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .menu li:hover{
+            background: #e74c3c;
+
+        }
+
+        .menu > li > a{
+            transform: skewX(-25deg);
+            padding: 1em 2em;
+
+        }
+
+        .submenu{
+            position: absolute;
+            width: 200px;
+            left: 50%;
+            margin-left: -100px;
+            transform: skewX(-25deg);
+            transform-origin: left top;
+            border: 1px solid rebeccapurple;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .submenu li{
+            background-color: #34495e;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+            /* border: 1px solid red; */
+        }
+
+        .submenu > li > a{
+            padding: 1em 2em;
+        }
+
+        .submenu > li::after
+        {
+            content: '';
+            position: absolute;
+            top: -125%;
+            height: 100%;
+            width: 100%;
+            box-shadow: 0 0 50px rgba(40, 37, 79, 0.9);
+
+        }
+
+        .submenu > li:nth-child(odd){
+            -webkit-transform: skewX(-25deg) translateX(0);
+
+        }
+
+        /* .submenu > li:nth-child(odd) > a{
+            -webkit-transform: skewX(-25deg);
+
+        }
+
+        .submenu > li:nth-child(odd)::after{
+            -webkit-transform: skewX(-25deg);
+            right: -50%;
+        }
+
+        .submenu > li:nth-child(even){
+            right: -50%;
+            -webkit-transform: skewX(-25deg) translateX(0);
+        }
+
+        .submenu > li:nth-child(even) > a{
+            -webkit-transform: skewX(-25deg);
+        }
+
+        .submenu > li:nth-child(even)::after{
+            left: -50%;
+            -webkit-transform: skewX(25deg);
+    
+        } */
+
+        .submenu, .submenu li{
+            opacity: 0;
+            /* -webkit-transform: skewX(25deg); */
+            border-radius: 3px;
+
+        }
+
+        .submenu li{
+            transition: 0.2s ease -webkit-transform;
+        }
+
+        .menu > li:hover .submenu, .menu > li:hover .submenu li{
+            opacity: 1;
+            visibility: visible;
+        } 
+
+        .menu > li:hover .submenu li:nth-child(even){
+            -webkit-transform: skewX(25deg) translateX(15deg);
+
+        }
+
+        .menu > li:hover .submenu li:nth-child(odd){
+            -webkit-transform: skewX(-25deg) translateX(-15deg);
+        }
+        
+
+    </style>
+</head>
+<body>
+    <ul class="menu cf">
+        <li><a href="">Home</a></li>
+        <li>
+            <a href="">course</a>
+            <ul class="submenu">
+                <li><a href="">HTML 5</a></li>
+                <li><a href="">CSS 3</a></li>
+                <li><a href="">JAVASCRIPT</a></li>
+                <li><a href="">PHP</a></li>
+            </ul>
+        </li>
+        <li><a href="">Gallery</a></li>
+        <li>
+            <a href="">Teams</a>
+            <ul class="submenu">
+                <li><a href="">HTML 5</a></li>
+                <li><a href="">CSS 3</a></li>
+                <li><a href="">JAVASCRIPT</a></li>
+                <li><a href="">PHP</a></li>
+            </ul>
+        </li>
+        <li><a href="">Location</a></li>
+        <li>
+            <a href="">Meetings</a>
+            <ul class="submenu">
+                <li><a href="">HTML 5</a></li>
+                <li><a href="">CSS 3</a></li>
+                <li><a href="">JAVASCRIPT</a></li>
+                <li><a href="">PHP</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
